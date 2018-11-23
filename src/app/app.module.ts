@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsComponent } from './component/forms/forms.component';
+import { NgxsModule } from "@ngxs/store";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

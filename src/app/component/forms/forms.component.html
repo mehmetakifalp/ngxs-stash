@@ -1,0 +1,25 @@
+<form  [formGroup]="userForm">
+
+  <label for="line"><b>Line</b></label>
+  <input type="number" name="line" formControlName="line">
+
+
+  <label for="name"><b>Name</b></label>
+  <input type="text" name="name" formControlName="name">
+
+
+  <label for="surname"><b>Surname</b></label>
+  <input type="text" name="surname" formControlName="surname">
+
+
+
+  <label for="age"><b>Age</b></label>
+  <select name="age">
+    <option value="15">15</option>
+    <option value="15">15</option>
+    <option value="15">15</option>
+  </select>
+
+  <button type="submit">Submit</button>
+
+</form>
