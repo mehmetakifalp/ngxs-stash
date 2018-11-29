@@ -1,4 +1,7 @@
-<form  [formGroup]="userForm">
+<form  [formGroup]="userForm"  novalidate
+ngxsForm="todos.todoForm"
+ngxsFormClearOnDestroy="true"
+(ngSubmit)="onSubmit()">
 
   <label for="line"><b>Line</b></label>
   <input type="number" name="line" formControlName="line">
