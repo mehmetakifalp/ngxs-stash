@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Store } from '@ngxs/store';
+import { Store, Select } from '@ngxs/store';
 import { AddUser } from 'src/app/action/forms.action';
+import { FormsState } from 'src/app/state/forms.state';
 
 @Component({
   selector: 'app-forms',
@@ -12,6 +13,8 @@ export class FormsComponent implements OnInit {
 
   userForm: FormGroup;
 
+
+  @Select(FormsState)
   constructor(private formBuilder: FormBuilder, private store: Store) { }
 
   ngOnInit() {
