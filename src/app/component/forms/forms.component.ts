@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Store } from '@ngxs/store';
+import { AddUser } from 'src/app/action/forms.action';
 
 @Component({
   selector: 'app-forms',
@@ -10,7 +12,7 @@ export class FormsComponent implements OnInit {
 
   userForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private store: Store) { }
 
   ngOnInit() {
 
@@ -19,6 +21,14 @@ export class FormsComponent implements OnInit {
       name: ['', Validators.required],
       surname: ['', Validators.required],
       age: ['', Validators.required]
+    })
+  }
+
+
+
+  onSubmit(){
+    this.store.dispatch(new AddUser()).subscribe((res) => {
+      this.userForm.reset();
     })
   }
 

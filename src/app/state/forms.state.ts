@@ -1,4 +1,4 @@
-import { State, Action, StateContext } from "@ngxs/store";
+import { State, Action, StateContext, Selector } from "@ngxs/store";
 import { UserForm } from "../model/forms.model";
 import { HttpClient } from "selenium-webdriver/http";
 import { AddUser } from "../action/forms.action";
@@ -30,11 +30,15 @@ export class FormsState{
 
   }
 
+  @Selector()
+  static getUsers(state: UserFormStateModel){
+    return state.users;
+  }
+
 
   @Action(AddUser)
-  add({getState, patchState}: StateContext<UserFormStateModel>, {payload}: AddUser){
+  add({getState, patchState}: StateContext<UserFormStateModel>){
     const state = getState();
-    console.log(payload);
   }
 
 
