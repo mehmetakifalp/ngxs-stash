@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { FormsComponent } from './component/forms/forms.component';
 import { NgxsModule } from "@ngxs/store";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponent } from './component/forms/reactive-form/reactive.form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormsComponent
+    FormsComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
