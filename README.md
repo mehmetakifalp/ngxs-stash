@@ -9,3 +9,8 @@ NGXS - Angular7 - State Management with NXS
 
 
 Widget demos with NGXS-State management.
+
+
+
+- npm install
+- npm start
