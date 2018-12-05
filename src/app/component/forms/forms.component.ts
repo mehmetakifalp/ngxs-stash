@@ -13,8 +13,9 @@ export class FormsComponent implements OnInit {
 
   userForm: FormGroup;
 
+  // @Select(FormsState)
 
-  @Select(FormsState)
+
   constructor(private formBuilder: FormBuilder, private store: Store) { }
 
   ngOnInit() {
