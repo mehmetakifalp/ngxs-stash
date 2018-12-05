@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, FormArray } from "@angular/forms";
 
 @Component({
   selector: 'app-reactive-form',
@@ -28,6 +28,11 @@ export class ReactiveFormComponent implements OnInit{
 
 
   newRow(){
+    const control = <FormArray>this.invoiceForm.controls['items'];
+    control.push(this.initRows())
+  }
+
+  deleteRow(){
 
   }
 
