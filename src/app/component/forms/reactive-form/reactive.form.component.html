@@ -1,1 +1,15 @@
 Reactive form example!
+
+<form [formGroup]="invoiceForm">
+  <div formArrayName="items">
+    <div *ngFor="let item of invoiceForm.controls.items.controls;" [formGroupName]="i">
+      <h4>Invoice Row #{{i + 1}}</h4>
+      <div class="form-group">
+        <label>Item Name</label>
+        <input formControlName="itemname" class="form-control">
+      </div>
+      <button *ngIf="invoiceForm.controls.items.controls.length > 1" (click)="deleteRow(i)" class="btn btn-danger">Delete Button</button>
+    </div>
+  </div>
+</form>
+<pre>{{invoiceForm.value | json}}</pre>
